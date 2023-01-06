@@ -1,0 +1,66 @@
+.welcome-header {
+    margin: 90px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome-header__title {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .welcome-header__text {
+    width: 60%;
+    opacity: 0.7;
+  }
+  
+  /*위에는 calss로 코딩 아래는 id로 코딩*/
+/*
+만약 calss 로 했음 
+.login-form__input{}
+.login-form__btn{}
+.login-form__a{}
+*/
+
+  #login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+  }
+  
+  #login-form input {
+    border: none;
+    padding: 15px 0px;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  
+  #login-form input:not([type="submit"]) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  #login-form input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  #login-form input:focus {
+    /*variable.css에 색상 정의*/
+    border-color: var(--yellow);
+  }
+  
+  #login-form input[type="submit"] {
+    background-color: var(--yellow);
+    cursor: pointer;
+    padding: 20px 0px;
+    border-radius: 5px;
+  }
+  
+  #login-form a {
+    /* 링크를 센터에 놓고 링크는 기본적으로 
+    블루색상에 밑줄이있어서 없애주기 */
+    text-align: center;
+    text-decoration: none;
+    color: inherit; /* 부모의 속성으로 간다 디폴트..*/
+    font-size: 13px;
+  }
