@@ -1,0 +1,44 @@
+.more-screen .icon-row {
+    margin-top: 35px;
+}
+
+.more-suggestions {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: var(--main-border);
+}
+
+.more-suggestions__title {
+    margin-bottom: 30px;
+}
+
+.more-suggestions__icons {
+    display: flex;
+}
+
+.more-suggestions__icon {
+    /*간격을 두고 정렬
+    그리고 플렉스 하고 위아래로 정렬
+    그다음 icon 전체 가운데 정렬*/
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more-suggestions__icon-imge {
+    /* font-size: 32px; 아이콘 이미지를 크게 해보니 잘됨 니코쌤은 i클래스에 줌*/
+    width: 60px;
+    height: 60px;
+    background-color: var(--yellow);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.more-suggestions__icon-imge i {
+    font-size: 32px;
+    color: white;
+}

@@ -1,0 +1,22 @@
+
+/* -- 셋팅 페이지에 헤더부분 -- */
+
+.alt-header {
+    padding: var(--horizontal-space);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alt-header__title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* 중앙으로 정렬 */
+.alt-header__colum:first-child {
+    margin-right: auto;
+}
+.alt-header__colum:last-child {
+    margin-left: auto;
+}
