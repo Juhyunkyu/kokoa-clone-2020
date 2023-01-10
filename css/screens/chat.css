@@ -1,0 +1,88 @@
+#chat-screen {
+    /* body에 색상을 넣기 위해 id부여*/
+    background-color: #ABC1D1;
+    
+    /* 스크롤 테스트 */
+    height: 11000vh;
+}
+
+#chat-screen .alt-header,
+#chat-screen .status-bar {
+    top:0;
+    /*스크롤이 생겼을때 위에 해더가 고정되게 하는거*/
+    position: fixed;
+    width: 100%;
+    /*화면 사이즈에 맞게 아이콘이 잘나오게 하는거*/
+    box-sizing: border-box;
+    /* 스크롤을 했을때 alt-header이나 status-bar뒤에 올때 안보이게 하기 위해*/
+    background-color: #ABC1D1;
+}
+
+
+/* z-index 는 layer 순서 0일수록 맨밑에 있음
+ position fixed 는 다른 레이어를 가져서 z-index를 씀*/
+#chat-screen .status-bar {
+    z-index: 2;
+}
+#chat-screen .alt-header {
+    top: 10px;
+    z-index: 1;
+}
+
+.main-chat {
+    /* fixed 는 이전의 box들과는 다른 layer가 되어 마진을 이렇게 준거임*/
+    margin-top: 120px;
+    display: flex;
+    /* 이요소들이 서로 위아래로 정렬해야 되니 colum 
+    cross Axis는 수평이되고 세로축을 기준으로 중앙정렬*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat__timestamp {
+    color:white;
+    background-color: #92A4B2;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.message_row {
+    width: 100%;
+    display: flex;
+}
+
+.message_row img {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.message__author {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.meeeage__bubble {
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 13px;
+    /* 말풍선 처럼 각모서리에 border를 줄수있다*/
+    border-top-left-radius: 0;
+    margin-right: 5px;
+}
+
+.message__info {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* 상대방이랑 시간이랑 같은 사이즈 선언*/
+.message__time,
+ .message__author {
+    font-size: 14px;
+    opacity: 0.7;
+}

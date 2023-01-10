@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat/jyh - Kokoa Clone</title>
+</head>
+
+<body id="chat-screen">
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <i class="fas fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>18:43</span>
+        </div>
+        <div class="status-bar__column">
+            <span>110%</span>
+            <i class="fas fa-battery-full fa-lg"></i>
+            <i class="fas fa-bolt"></i>
+        </div>
+    </div>
+
+<!--단축키 hearder.alt-header>div.alt-header__colum*3
+hearder에 클래스 헤더안에 div 3개 만들고 class만듬 -->
+    <header class="alt-header">
+        <div class="alt-header__colum">
+            <a href="chats.html">
+                <i class="fas fa-angle-left fa-3x"></i>
+            </a>
+        </div>
+        <div class="alt-header__colum">
+            <h1 class="alt-header__title">YunHu</h1>
+        </div>
+        <div class="alt-header__colum">
+            <span><i class="fas fa-search fa-lg"></i></span>
+            <span><i class="fas fa-bars fa-lg"></i></span>
+        </div>
+    </header>
+   
+    <main class="main-screen main-chat"> <!--화면 앞라인에 맞게 정렬-->
+
+        <div class="chat__timestamp">
+            <span>Tuesday, June 30, 2020</span>
+        </div>
+    <!-- 채팅창 한행 row -->
+        <div class="message_row">
+            <img src="screenshots/yunho01.jpg"/>
+            <div class="message-row__content">
+                <span class="message__author">상대방</span>
+                <div class="message__info">
+                    <span class="meeeage__bubble">Hi</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

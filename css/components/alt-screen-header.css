@@ -12,11 +12,28 @@
     font-size: 25px;
     font-weight: 600;
 }
-
+/* 센터에 정렬 하는 치트키 1*/
+.alt-header__colum {
+    width: 33%;
+}
 /* 중앙으로 정렬 */
 .alt-header__colum:first-child {
     margin-right: auto;
 }
+.alt-header__colum:nth-child(2) {
+    /*센터 치트키 3 
+    위에 시계보면 센터가 되는지 보임*/
+    text-align: center;
+}
+
 .alt-header__colum:last-child {
     margin-left: auto;
+    /* 센터 정렬 치트키 2 
+    마지막 돋보기랑 햄버거 flex주고 끝으로 정렬 flex-end*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alt-header__colum span:last-child {
+    margin-left: 20px;
 }

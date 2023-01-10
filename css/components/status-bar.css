@@ -2,6 +2,11 @@
     display: flex;
     justify-content: center;
     padding: 5px 3px;
+    /*숙제 위에 status바 스크롤 있어도 고정하는 속성주기
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    */
   }
   .status-bar__column {
     width: 33%;
