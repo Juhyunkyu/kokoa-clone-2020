@@ -2,6 +2,7 @@
   position: absolute;
   /* z-index 글씨가 덮히지 않게 맨위에 99라는 높은 숫자를 줌*/
   z-index: 99;
+  /* chat 화면에서는 높이를 많이 줘서 밑에 input화면이 보임*/
   height: 100vh;
   width: 100vw;
   background-color: var(--yellow);
@@ -13,7 +14,7 @@
 }
 
 /* 650px 이상이면 밑에 작동 */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 510px) {
   #no-mobile {
     display: none;
   }
