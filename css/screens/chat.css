@@ -1,88 +1,269 @@
 #chat-screen {
-    /* body에 색상을 넣기 위해 id부여*/
-    background-color: #ABC1D1;
-    
-    /* 스크롤 테스트 */
-    height: 11000vh;
+  /* body에 색상을 넣기 위해 id부여*/
+  background-color: #abc1d1;
+
+  /* 스크롤 테스트 */
+  height: 100vh;
 }
 
 #chat-screen .alt-header,
 #chat-screen .status-bar {
-    top:0;
-    /*스크롤이 생겼을때 위에 해더가 고정되게 하는거*/
-    position: fixed;
-    width: 100%;
-    /*화면 사이즈에 맞게 아이콘이 잘나오게 하는거*/
-    box-sizing: border-box;
-    /* 스크롤을 했을때 alt-header이나 status-bar뒤에 올때 안보이게 하기 위해*/
-    background-color: #ABC1D1;
+  top: 0;
+  /*스크롤이 생겼을때 위에 해더가 고정되게 하는거*/
+  position: fixed;
+  width: 100%;
+  /*화면 사이즈에 맞게 아이콘이 잘나오게 하는거*/
+  box-sizing: border-box;
+  /* 스크롤을 했을때 alt-header이나 status-bar뒤에 올때 안보이게 하기 위해*/
+  background-color: #abc1d1;
 }
-
 
 /* z-index 는 layer 순서 0일수록 맨밑에 있음
  position fixed 는 다른 레이어를 가져서 z-index를 씀*/
 #chat-screen .status-bar {
-    z-index: 2;
+  z-index: 2;
 }
 #chat-screen .alt-header {
-    top: 10px;
-    z-index: 1;
+  top: 10px;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
 }
 
 .main-chat {
-    /* fixed 는 이전의 box들과는 다른 layer가 되어 마진을 이렇게 준거임*/
-    margin-top: 120px;
-    display: flex;
-    /* 이요소들이 서로 위아래로 정렬해야 되니 colum 
+  /* fixed 는 이전의 box들과는 다른 layer가 되어 마진을 이렇게 준거임*/
+  margin-top: 140px;
+  display: flex;
+  /* 이요소들이 서로 위아래로 정렬해야 되니 colum 
     cross Axis는 수평이되고 세로축을 기준으로 중앙정렬*/
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s linear;
 }
 
 .chat__timestamp {
-    color:white;
-    background-color: #92A4B2;
-    font-size: 14px;
-    padding: 8px 15px;
-    border-radius: 20px;
-    margin-bottom: 20px;
+  color: white;
+  background-color: #92a4b2;
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
-.message_row {
-    width: 100%;
-    display: flex;
+.message-row {
+  width: 100%;
+  display: flex;
+  /* 상대방 메세지 밑에 간격*/
+  margin-bottom: 20px;
 }
 
-.message_row img {
-    width: 40px;
-    height: 40px;
-    border-radius: 15px;
-    margin-right: 10px;
+.message-row img {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  margin-right: 10px;
 }
 
 .message__author {
-    margin-bottom: 5px;
-    display: block;
+  margin-bottom: 5px;
+  display: block;
 }
 
-.meeeage__bubble {
-    background-color: white;
-    padding: 10px 15px;
-    font-size: 18px;
-    border-radius: 13px;
-    /* 말풍선 처럼 각모서리에 border를 줄수있다*/
-    border-top-left-radius: 0;
-    margin-right: 5px;
+@keyframes bubbleAn {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes bubbleAnRow {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 13px;
+  /* 말풍선 처럼 각모서리에 border를 줄수있다*/
+  border-top-left-radius: 0;
+  margin-right: 5px;
+  animation: bubbleAn 1s linear;
 }
 
 .message__info {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 /* 상대방이랑 시간이랑 같은 사이즈 선언*/
 .message__time,
- .message__author {
-    font-size: 14px;
-    opacity: 0.7;
+.message__author {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* modifier 공부*/
+/* 내가 보내는 메세지*/
+.message-row--own {
+  /* 위에 이미 flex가 선언이 되어서
+    justify-content: flex-end;만 써도 됨 */
+  justify-content: flex-end;
+}
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+  /* 이미 상대방 말풍선에 위 왼쪽이 
+    border 0이라 다시 15px로 주고 오른쪽위를 0px
+    그리고 margin-right가 5px가 되어있으니 이걸 0px로*/
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
+  margin-right: 0px;
+  margin-left: 5px;
+
+  animation: bubbleAnRow 1s linear;
+}
+
+/* 
+order는 온니 flex children 에게만 먹힌다 
+시간이 뒤에 있는걸 앞으로 옮김
+.message-row--own .message__bubble {
+    order: 1;
+}
+
+.message-row--own .message__time {
+    요것만 정해주면 안되어 앞에 버블에게 순서를 부여 
+    (위에 .message-row--own .message__bubble) 
+    order: 0;
+}
+*/
+
+/* 위에 코드는 길어서 밑에 코드로 대체함
+결론은 시간과 말풍선 순서 바뀜*/
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+
+/* ------------채팅 입력창 ----------------------------  */
+
+.reply {
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 17px;
+  box-sizing: border-box;
+
+  /* transition 0.3초로 서서히 보여주기 일종의 애니매이션*/
+  transition: all 0.3s ease-in-out;
+}
+
+.reply__column i {
+  opacity: 0.5;
+}
+
+/* 참고로.reply .replu__column:nth-child로 써도 된다 */
+.reply__column:first-child {
+  width: 10%;
+}
+.reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+
+/* .reply__column:last-child input 은 왜 안됨?
+그리고 width 100%는 위에 두개의 reply__column에 width를 선언해줘야
+ reply input의 width가 먹힘*/
+.reply input {
+  padding-left: 5px;
+  width: 100%;
+  height: 30px;
+  border: var(--main-border);
+  border-radius: 15px;
+  /* transition 0.3초로 서서히 보여주기 일종의 애니매이션*/
+  transition: all 0.3s ease-in-out;
+}
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: -2px;
+  top: 2px;
+}
+
+/* 라스트 차일드 바로 앞 아이콘을 선택 (스마일 아이콘)*/
+.reply__column:last-child > i {
+  right: 40px;
+  top: 9px;
+}
+
+/* .reply_column button으로 작성해도 됨 */
+.reply__column:last-child button {
+  background-color: var(--yellow);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.reply__column button i {
+  opacity: 1;
+}
+
+/* 버튼을 누르면 아무일도 일어나지 않게 그냥 만든거임*/
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
+}
+
+/* 채팅창에 (input) 포커스가 되었을때 아이콘들이 안보이게... focus-within을 쓴다*/
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile,
+.reply:focus-within button {
+  /* display: none; 이렇게도 할수있지만 */
+  opacity: 0;
+}
+
+/* 인풋창에 포커스 되었을때 input창은 그대로 두고 나머진 밑으로 내리는작업
+reply 전체를 내리고 inut창을 내린 값 다시 올려주면됨
+reply input에 transition 선언*/
+.reply input:focus {
+  width: 92vw;
+  transform: translateX(-11.5%) translateY(-80px);
+}
+
+/* reply에 transition을 선언 부드럽게*/
+.reply:focus-within {
+  transform: translateY(80px);
+}
+
+/* 상대방 챗팅창 사진 hover일때 돌아가게 animation*/
+@keyframes authorIme {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotatey(360deg);
+  }
+}
+.message-row img:hover {
+  animation: authorIme 4s linear infinite;
 }

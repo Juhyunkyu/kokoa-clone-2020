@@ -120,3 +120,28 @@
 .open-post__heart-count span {
     margin-left: 5px;
 }
+
+/* 사진안에 하트 두근거리게 하기 */
+@keyframes heartBeat {
+    0% {
+        color: white;
+        transform: none;
+    }
+    50% {
+        color: tomato;
+        /* scale 커졌다 작아졌다 숫자가 클수록 모양도 커짐*/
+        transform: scale(1.5);
+    }
+    100% {
+        color: white;
+        transform: none;
+    }
+}
+
+.open-post__heart-count:hover i {
+    /* wil-change 일종의 치트키 scale이 잘작동하지않고 
+    부자연스러울때 이걸쓰면 가속화가 되어 부드럽게 구연됨
+    (그래픽카드를 이용해서 애니메이션을 가속화)*/
+    will-change: transform;
+    animation: heartBeat 1s linear infinite;
+}

@@ -29,19 +29,26 @@
     color: rgba(0, 0, 0, 0.5);
   }
   
+  /* ---------누를때마다 스플레쉬 화면 나오게 
+  
+  css에서는 완전히 엘리멘트리를 완전히 없앨순 없다 --------*/
+  
   @keyframes hideSplashScreen {
     from {
       opacity: 1;
     }
     to {
       opacity: 0;
+      /* 마우스에 걸리지 않게 하는거 hidden*/
       visibility: hidden;
     }
   }
   
   #splash-screen {
     background-color: var(--yellow);
+    /*제일 위에 오게 가장 가까운 relative위에 오게*/
     position: absolute;
+    /*vh vw 높이 넓이*/
     height: 100vh;
     width: 100vw;
     top: 0;
@@ -49,6 +56,12 @@
     justify-content: center;
     align-items: center;
     font-size: 132px;
+    /*forwards는 마지막 속성값 
+    위에 @keyframes hideSplashScreen에
+     to안에 있는
+      opacity: 0;
+      visibility: hidden; 기억 없음 그냥 노랭이 화면으로 다시 돌아감*/
     animation: hideSplashScreen 0.3s ease-in-out forwards;
-    animation-delay: 0.3s;
+    /* 위에 0.3초 동안 애니메이션이 작동하고 밑에 0.3초동안 정지*/
+    animation-delay: 0.3s; 
   }

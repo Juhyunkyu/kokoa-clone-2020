@@ -1,0 +1,20 @@
+#no-mobile {
+  position: absolute;
+  /* z-index 글씨가 덮히지 않게 맨위에 99라는 높은 숫자를 줌*/
+  z-index: 99;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  top: 0;
+}
+
+/* 650px 이상이면 밑에 작동 */
+@media screen and (max-width: 650px) {
+  #no-mobile {
+    display: none;
+  }
+}
