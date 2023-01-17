@@ -1,147 +1,149 @@
 .find-icons {
-    display: flex;
-    justify-content: space-between;
-    }
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-right: 15px;
+}
 .find-icons__icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .find-icons__icon i {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .find-icons__icon span {
-    margin-top: 18px;
-    /* margin-bottom: 34px;*/
+  margin-top: 18px;
+  /* margin-bottom: 34px;*/
 }
 
 .recommended-friends {
-    margin: 25px 0px;
-    padding: 25px 0px;
-    border-top: var(--main-border);
-    border-bottom: var(--main-border);
+  margin: 25px 0px;
+  padding: 25px 0px;
+  border-top: var(--main-border);
+  border-bottom: var(--main-border);
 }
 
 .recommended-friends__title {
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .recommended-friends span {
-    margin: 100px 0px;
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.5);
+  margin: 100px 0px;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .open-chat__header {
-    display: flex;
-    justify-content: space-between;
-    opacity: 0.8;
-    margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.8;
+  margin-bottom: 25px;
 }
 .open-chat__header span {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .open-post {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
 }
 
 .open-post__title {
-    margin-bottom: 7px;
-    font-size: 20px;
-    font-weight: 600;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .open-post__hashtags {
-    text-transform: uppercase; /*소문자를 대문자로 바꿔주는거*/
-    opacity: 0.6;
+  text-transform: uppercase; /*소문자를 대문자로 바꿔주는거*/
+  opacity: 0.6;
 }
 
 .open-post__members {
-    margin-top: 7px;
-    display: flex;
-    align-items: center;
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
 }
 
 .open-post__members img {
-    width: 13px;
-    height: 15px;
-    border-radius: 50%;
-    margin-right: 5px;
+  width: 13px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 .open-post__mamber-count {
-    opacity: 0.5;
-    font-size: 14px;
+  opacity: 0.5;
+  font-size: 14px;
 }
 .open-post__members .divider {
-    width: 2px;
-    height: 13px;
-    background-color: rgba(0, 0, 0, 0.2);
-    margin: 0px 7px;
+  width: 2px;
+  height: 13px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0px 7px;
 }
 .open-post__member-status {
-    color: fuchsia;
+  color: fuchsia;
 }
 
 .open-post__photo {
-    position: relative;
+  position: relative;
 }
 
 .open-post__photo img {
-    width: 120px;
-    height: 120px;
-    border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
 }
 
 .open-post__heart-count {
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    padding: 5px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
 
-    /*합체 필요에 relative(부모) 
+  /*합체 필요에 relative(부모) 
     선언(open-post__photo)*/
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 15px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 15px;
 }
 
 .open-post__heart-count span {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 /* 사진안에 하트 두근거리게 하기 */
 @keyframes heartBeat {
-    0% {
-        color: white;
-        transform: none;
-    }
-    50% {
-        color: tomato;
-        /* scale 커졌다 작아졌다 숫자가 클수록 모양도 커짐*/
-        transform: scale(1.5);
-    }
-    100% {
-        color: white;
-        transform: none;
-    }
+  0% {
+    color: white;
+    transform: none;
+  }
+  50% {
+    color: tomato;
+    /* scale 커졌다 작아졌다 숫자가 클수록 모양도 커짐*/
+    transform: scale(1.5);
+  }
+  100% {
+    color: white;
+    transform: none;
+  }
 }
 
 .open-post__heart-count:hover i {
-    /* wil-change 일종의 치트키 scale이 잘작동하지않고 
+  /* wil-change 일종의 치트키 scale이 잘작동하지않고 
     부자연스러울때 이걸쓰면 가속화가 되어 부드럽게 구연됨
     (그래픽카드를 이용해서 애니메이션을 가속화)*/
-    will-change: transform;
-    animation: heartBeat 1s linear infinite;
+  will-change: transform;
+  animation: heartBeat 1s linear infinite;
 }
