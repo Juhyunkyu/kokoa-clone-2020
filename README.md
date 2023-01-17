@@ -24,7 +24,7 @@ branch를 만들때 명칭은 gh-pages 로 무조건해야함(무료 호스트)
 
 다르게 말해서
 Current branch가 main
-main>commit to main 버튼클릭(왼쪽 아래)>오른쪽위 Fetch origin 클릭
+main>commit to main 버튼클릭(왼쪽 아래)>오른쪽위 push origin 클릭
 
 Current beanch가 gh-pages 변경
 위에 메뉴 Branch 에 branch에 update from master 클릭
