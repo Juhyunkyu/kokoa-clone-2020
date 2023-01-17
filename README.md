@@ -1,3 +1,11 @@
 # Kokoa clone 2020 Update
 
-HTML & CSS are so much fun!
+HTML & CSS are so much fun! +
+github
+
+static website는 그냥 html, css, javaScript로만 이루어진 사이트
+front-end만 가능 back-end는 안됨
+
+branch가 있어야 무료 호스트를 받을수있다
+
+branch를 만들때 명칭은 gh-pages 로 무조건해야함(무료 호스트)
