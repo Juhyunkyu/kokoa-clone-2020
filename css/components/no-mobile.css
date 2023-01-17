@@ -13,8 +13,8 @@
   top: 0;
 }
 
-/* 650px 이상이면 밑에 작동 */
-@media screen and (max-width: 510px) {
+/* 600px 이상이면 밑에 작동 */
+@media screen and (max-width: 600px) {
   #no-mobile {
     display: none;
   }
