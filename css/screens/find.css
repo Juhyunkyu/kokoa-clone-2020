@@ -1,8 +1,7 @@
 .find-icons {
   display: flex;
   justify-content: space-between;
-  box-sizing: border-box;
-  margin-right: 15px;
+  align-items: center;
 }
 .find-icons__icon {
   display: flex;
@@ -15,6 +14,7 @@
 }
 
 .find-icons__icon span {
+  font-size: 12px;
   margin-top: 18px;
   /* margin-bottom: 34px;*/
 }
